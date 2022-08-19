@@ -15,11 +15,11 @@ import java.util.Scanner;
 
 public class BookDemo implements Commands {
 
-    private static Scanner scanner = new Scanner(System.in);
-    private static BookStorage bookStorage = new BookStorage();
-    private static AuthorStorage authorStorage = new AuthorStorage();
-    private static Author author = new Author("xachatur", "abovyan", "vep2@mail.ru", "male");
-    private static UserStorage userStorage = new UserStorage();
+    private static final Scanner scanner = new Scanner(System.in);
+    private static final BookStorage bookStorage = new BookStorage();
+    private static final AuthorStorage authorStorage = new AuthorStorage();
+    private static final Author author = new Author("xachatur", "abovyan", "vep2@mail.ru", "male");
+    private static final UserStorage userStorage = new UserStorage();
 
     public static void main(String[] args) throws IOException {
         initData();
@@ -70,7 +70,7 @@ public class BookDemo implements Commands {
             }
         }
     }
-
+//axpers xi push chi anum???
     private static void loginUser() {
         boolean run = true;
         while (run) {
@@ -285,11 +285,14 @@ public class BookDemo implements Commands {
         String email = scanner.nextLine();
         String gender = printBooksByAuthorGender();
         if (gender == null) {
+            //TODO: kam ban grel kam hanel
         } else {
             if (authorName == null || authorName.equals("")) {
                 System.out.println("Please input author name!!!");
+                //TODO: kam logika grel inch vor, kam jnjel
             } else if (authorSurName == null || authorSurName.equals("")) {
                 System.out.println("Please input author surname");
+                //TODO: nuyny sa u takiny
             } else if (!email.contains("@")) {
                 System.out.println("please input correct email");
             } else {
@@ -320,7 +323,7 @@ public class BookDemo implements Commands {
 
             if (command == 1) {
                 addAuthor();
-            } else if (false) ;
+            } else if (false) ; //TODO: kam jnjel kam logika grel, if-ic heto chi karox ; lnel
         } else {
             authorStorage.printAllAuthor();
             System.out.println("please choose index author");
@@ -329,9 +332,11 @@ public class BookDemo implements Commands {
                 int authorIndex = Integer.parseInt(scanner.nextLine());
                 author = authorStorage.getAuthorByIndex(authorIndex);
             } catch (AuthorNotFoundException e) {
-                System.out.println(e);
+                System.out.println(e.getMessage());
             } catch (NumberFormatException e) {
                 System.out.println("please input only numbers");
+                //TODO: heto inch? tpum enq bayc hnaravorutyun chenq talis noric chisht grelu
+                //minchev push ani revizia anenq mi hat ))
             }
             if (author == null) {
                 System.out.println("please choose correct index!!!");
