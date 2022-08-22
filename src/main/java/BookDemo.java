@@ -214,7 +214,7 @@ public class BookDemo implements Commands {
         User user1 = new User("test","test","test@mail.ru","123456",UserType.ADMIN);
         userStorage.add(user1);
         bookStorage.add(new Book("abu lala mahari", 750, 145, "Joxovacu"));
-        bookStorage.add(new Book("xenty", 8500, 14, "Joxovacu"));
+        bookStorage.add(new Book("xenty", 8500, 14, "Joxovacuner"));
         bookStorage.add(new Book("verq hayastani", 9500, 15, "Joxovacu"));
         bookStorage.add(new Book("hayoc lezu", 5500, 45, "Joxovacu"));
         authorStorage.add(new Author("avetiq", "isahakyan", "poem@mail.ru", "male"));
